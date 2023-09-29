@@ -1,0 +1,5 @@
+{
+  "viking": "http://localhost:4201",
+  "master": "http://localhost:4202",
+  "sakura": "http://localhost:4203"
+}
