@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@promotion/shared/data-access-user": [
-        "shared/data-access-user/src/index.ts"
+        "libs/shared/data-access-user/src/index.ts"
       ]
     }
   },

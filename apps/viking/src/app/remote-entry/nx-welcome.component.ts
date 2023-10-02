@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import {UserService} from "@promotion/shared/data-access-user";
 
 @Component({
   selector: 'promotion-nx-welcome',
@@ -850,4 +851,11 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+  constructor(private userService: UserService) {
+    console.log(this.userService.status)
+  }
+  login() {
+    this.userService.checkCredentials('this.username', 'this.password');
+  }
+}

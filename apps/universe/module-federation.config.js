@@ -1,4 +1,4 @@
 module.exports = {
   name: 'universe',
-  remotes: ['viking', 'master', 'sakura'],
+  remotes: ['viking', 'master', 'sakura']
 };

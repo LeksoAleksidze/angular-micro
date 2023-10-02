@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, inject, ViewEncapsulation} from '@angular/core';
+import {UserService} from "@promotion/shared/data-access-user";
 
 @Component({
   selector: 'promotion-nx-welcome',
@@ -440,6 +441,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
                   d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                 />
               </svg>
+              <button (click)="handleStatus()">Click Me</button>
               <span>You&apos;re up and running</span>
             </h2>
             <a href="#commands"> What&apos;s next? </a>
@@ -850,4 +852,10 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+  private readonly userService = inject(UserService)
+
+  handleStatus() {
+     this.userService.setStatus(!this.userService.status)
+  }
+}
