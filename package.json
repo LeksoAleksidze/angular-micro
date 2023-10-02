@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve universe",
+    "start": "> nx run-many --target=serve --all --maxParallel=100",
     "start-master": "nx serve universe --devRemotes=master",
     "start-viking": "nx serve universe --devRemotes=viking",
     "start-sakura": "nx serve universe --devRemotes=sakura"
